@@ -1,0 +1,20 @@
+/* Blinking text animation */
+.blinking-text {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Black overlay for the website */
+.overlay {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+}
