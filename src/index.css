@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white relative font-sans h-screen overflow-y-scroll; /* Enable vertical scrolling */
+  }
+}
+
+@layer components {
+  .introducing-container {
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: 1;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #9675de, #383abe, #389ece, #5248c4, #9675de);
+    height: 170vh; /* Ensures the container takes up the full viewport height */
+    width: 100vw; /* Ensures the container takes up the full viewport width */
+  }
+
+  .contact-button {
+    box-shadow: inset 4px 4px 7px rgba(24, 29, 20, 0.25);
+    transition-duration: 0.3s;
+  }
+
+  .contact-button:hover {
+    box-shadow: inset 0px 10px 7px rgba(85, 68, 158, 0.7);
+  }
+
+  .hero-container {
+    padding: 2rem;
+    height: 100vh; /* Full viewport height */
+    margin-bottom: 0 auto; /* Fixed typo in margin-bottom */
+  }
+
+  .about-container {
+    background: rgba(128, 128, 128, 0.1); /* Gray with transparency */
+    padding: 2rem;
+    height: 100vh; /* Full viewport height */
+  }
+
+  .experience-container {
+    padding: 2rem;
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Restore simpler layout */
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 0; /* Align the line to the left */
+    width: 2px;
+    background-color: gray;
+    height: 100%; /* Full height of the container */
+    top: 10px; /* Reduced top margin */
+  }
+
+  .timeline-card {
+    margin: 1rem 0; /* Reduced margin */
+    width: auto; /* Remove fixed width */
+    background-color: #1f1f2e;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #6b46c1;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -10px; /* Adjust dot position relative to the line */
+    width: 10px;
+    height: 10px;
+    background-color: #6b46c1;
+    border-radius: 50%;
+    top: 10px; /* Adjusted to match the line's top margin */
+  }
+
+  .experience-container .w-36.h-36 {
+    padding: 1rem; /* Reduced padding for the balls */
+  }
+
+  .project-container {
+    background: rgba(128, 128, 128, 0.1); 
+    padding: 4rem;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+  }
+
+  .project-scroll {
+    display: flex;
+    gap: 7rem; /* Increased gap between cards */
+    width: 100%;
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  }
+
+  .project-card {
+    flex: 0 0 70%; /* Each card takes 70% of the viewport width */
+    height: 100%; /* Adjusted height */
+    background-color: #1f1f2e;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #6b46c1;
+    scroll-snap-align: center; /* Snap card to center */
+    display: flex;
+    flex-direction: row; /* Divide into two horizontal sections */
+    overflow: hidden;
+  }
+
+  .project-card img {
+    flex: 1;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .project-card .card-content {
+    flex: 1;
+    padding: 1.5rem; /* Adjusted padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
+
+  .card-title {
+    font-size: 2rem; /* Decreased font size */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Adjusted margin */
+  }
+
+  .card-description {
+    font-size: 1rem; /* Decreased font size */
+    line-height: 1.5; /* Adjusted line height */
+    text-align: left;
+  }
+
+  .contact-container {
+    padding: 2rem;
+    height: 100vh; /* Full viewport height */
+  }
+
+  .header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.1); /* Gray with transparency */
+    z-index: 10;
+    padding: 2rem; /* Added padding */
+  }
+
+}
+
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at 50% 70%, var(--tw-gradient-stops));
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge, and Opera */
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+
+  .snap-x {
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+  }
+
+  .snap-center {
+    scroll-snap-align: center; /* Snap card to center */
+  }
+
+  .overflow-y-auto {
+    overflow-y: auto;
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+
+  .overflow-y-hidden {
+    overflow-y: hidden; /* Hide vertical scroll bar */
+  }
+}
