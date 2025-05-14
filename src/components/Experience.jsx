@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 
 const experienceData = [
   {
-    title: "React.js Developer",
-    company: "Starbucks",
-    date: "Jan 2021 – Feb 2022",
+    title: "Fullstack Developer Intern",
+    company: "FutureIntren",
+    date: "April 2025- Present",
   },
   {
-    title: "React Native Developer",
-    company: "Tesla",
-    date: "March 2020 – April 2021",
-  },
-  {
-    title: "Frontend Intern",
+    title: "Data Analyst Intern",
     company: "Gametosa",
-    date: "May 2021 – Aug 2021",
+    date: "November 2024 – April 2025",
+  },
+  {
+    title: "Btech CSE(DS) student",
+    university: "Brainware University",
+    date: "August 2021 – Present",
   }
 ];
 
@@ -52,11 +52,11 @@ export default function Experience() {
       <div className="flex-1 mt-20">
         <div className="max-w-5xl mx-auto flex gap-8 flex-row-reverse">
           {/* Right-Aligned 2D Movable Balls */}
-          <div className="relative w-2/3 h-[500px]">
+          <div className="relative w-2/3 h-[500px] flex flex-wrap gap-8"> {/* Added flex-wrap and gap */}
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="w-36 h-36 rounded-full flex items-center justify-center bg-gradient-to-b from-gray-700 to-gray-900 shadow-lg absolute cursor-pointer"
+                className="w-36 h-36 rounded-full flex items-center justify-center bg-gradient-to-b from-gray-700 to-gray-900 shadow-lg cursor-pointer hover:scale-110 hover:shadow-xl transition-transform duration-300"
                 style={{
                   left: `${positions[index]?.x || 0}px`, // Fallback to 0 if position is undefined
                   top: `${positions[index]?.y || 0}px`, // Fallback to 0 if position is undefined
@@ -81,11 +81,15 @@ export default function Experience() {
           <div className="relative w-1/3 flex flex-col items-start gap-6 ml-12 mt-8"> {/* Adjusted spacing */}
             <div className="absolute left-8 top-0 w-2 bg-gray-600 h-full"></div> {/* Adjusted line position */}
             {experienceData.map((item, index) => (
-              <div key={index} className="mb-6 relative flex items-center gap-4 ml-8"> {/* Adjusted spacing */}
+              <div
+                key={index}
+                className="mb-6 relative flex items-center gap-4 ml-8 hover:scale-105 hover:shadow-lg transition-transform duration-300" // Added hover effects
+              >
                 <div className="w-5 h-5 bg-purple-600 rounded-full"></div>
                 <div className="bg-[#1f1f2e] p-4 rounded-lg shadow-lg border border-purple-700 max-w-[250px]">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-sm text-purple-300">{item.company}</p>
+                  {item.company && <p className="text-sm text-purple-300">{item.company}</p>} {/* Display company if it exists */}
+                  {item.university && <p className="text-sm text-purple-300">{item.university}</p>} {/* Display university if it exists */}
                   <p className="text-xs text-gray-400 mt-1">{item.date}</p>
                 </div>
               </div>

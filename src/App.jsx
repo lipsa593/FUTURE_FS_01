@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/Header';
+import Header from './components/Header'; // Ensure this path is correct
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -12,7 +12,6 @@ const App = () => {
       <div className='hero-container container mx-auto px-30 flex flex-col'>
         <Header />
         <Hero />
-        <contain/>
       </div>
       <div id="about" className='about-container container mx-auto px-30 flex flex-col'>
         <About />

@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-black text-white relative font-sans h-screen overflow-y-scroll; /* Enable vertical scrolling */
+    @apply bg-[#040417] text-white font-sans h-screen overflow-y-scroll; /* Changed background to navy blue */
   }
 }
 
@@ -149,6 +149,14 @@
     padding: 2rem; /* Added padding */
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
